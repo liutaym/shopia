@@ -1,0 +1,102 @@
+body,h1, h2, h3
+ {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+html {
+    overflow-x: hidden;
+}
+header{
+    max-width: 1290px;
+    min-height: 69px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+}
+nav{
+    max-width: 1290px;
+    min-height: 98px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+}
+
+main{
+    max-width: 1290px;
+    min-height: 1963px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+
+}
+.resent{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    padding-top: 30px;
+
+}
+.featured{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 15px 0 15px;
+
+}
+
+figure{
+     margin: 0;
+ }
+.circle {
+    background: yellow;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position:absolute;
+}
+.products__img{
+    padding-bottom: 15px;
+}
+
+.products{
+    position: relative;
+}
+.trapezium {
+    height: 0;
+    width: 120px;
+    border-bottom: 45px solid #f0975c;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    position: absolute;
+    bottom: 20px;
+    right: 20%;
+
+}
+.add{
+    padding-top: 15px;
+    color: white;
+}
+section{
+    max-width: 1290px;
+    min-height: 293px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+
+}
