@@ -78,7 +78,9 @@ html {
 .menu_toggel{
     display:none;
 }
-
+.menu_toggel_box {
+    display: none;
+}
 
 @media screen and (max-width: 925px) {
     .bar {
@@ -98,9 +100,7 @@ html {
         display: block;
     }
 
-    .menu_toggel_box {
-        display: none;
-    }
+
 
     .bar_nav li {
         margin: 30px 30px;
