@@ -93,16 +93,29 @@ html {
         display: block;
         margin: 20px 0 0 0;
     }
-    .menu_toggel_box:checked ~ .bar_nav{
+
+    .menu_toggel_box:checked ~ .bar_nav {
         display: block;
     }
-    .bar_nav{
+
+    .menu_toggel_box {
+        display: none;
+    }
+
+    .bar_nav li {
+        margin: 30px 30px;
+    }
+
+    .bar_nav {
 
         display: none;
     }
 
+    .bar_nav li a {
+        border-right: none;
+        border-bottom: #222222;
+    }
 }
-
 
 .networks_icon{
     width:1em;
