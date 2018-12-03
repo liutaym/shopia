@@ -75,6 +75,35 @@ html {
     font-size:1em;
     padding: 0 20px;
 }
+.menu_toggel{
+    display:none;
+}
+
+
+@media screen and (max-width: 925px) {
+    .bar {
+        flex-direction:column;
+    }
+    .bar_navigition{
+        order: -1;
+    }
+}
+@media screen and (max-width: 680px) {
+    .menu_toggel {
+        display: block;
+        margin: 20px 0 0 0;
+    }
+    .menu_toggel_box:checked ~ .bar_nav{
+        display: block;
+    }
+    .bar_nav{
+
+        display: none;
+    }
+
+}
+
+
 .networks_icon{
     width:1em;
     height:1em;
@@ -103,6 +132,9 @@ html {
     margin: auto;
     left: -50vw;
     right: -50vw;
+}
+.menu_tagel{
+    display: none;
 }
 
 .menu_nav {
@@ -136,6 +168,22 @@ html {
 
 .social_media .fab:hover, .fa:hover{
     color: black;}
+
+
+
+@media screen and (max-width: 780px) {
+    .menu {
+        flex-direction:column;
+
+    }
+    .logo{
+        order: -1;
+        padding: 20px 0;
+    }
+    .menu_nav{
+        padding: 10px 0 20px 0;
+    }
+}
 
 .wrapper{
     max-width: 1290px;
@@ -234,15 +282,23 @@ html {
 
 @media screen and (max-width: 560px){
     .featured_ration {
-       display: none;
+     flex-direction: column;
     }
     .center__featured{
         width: 100%;
     }
-    
+    .products1__featured {
+        width: 100%;
+    }
+    .products2__featured{
+        width: 100%;
+    }
     .featured_content{
         flex-wrap: nowrap;
         position: static;
+    }
+    .featured_ration{
+        padding: 0;
     }
 }
 
@@ -373,6 +429,13 @@ figure{
     box-sizing: border-box;
     border: 1px solid black;
     display: flex;
+}
+
+@media screen and (max-width: 560px) {
+    .products {
+        width: 100%
+
+    }
 
 }
 
