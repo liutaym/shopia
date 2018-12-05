@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
     <title>Магазин</title>
-
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
+    <link href="style/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script defer  src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script defer  src="node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script defer  src="js/main.js"></script>
 
 </head>
 <body>
@@ -39,6 +43,7 @@
     </header>
     <nav>
 
+
             <div class="menu">
                <div class="menu_tagel">Menu</div>
                 <ul class="menu_nav">
@@ -52,17 +57,42 @@
                 <img class="title__img" src="img/shophia.png" alt="shophia">
             </div>
             <div class="social_media">
-               <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+               <div class="circle__social_media "> <a href="#"><i class="fab fa-twitter"></i></a></div>
+                <div class="circle__social_media "> <a href="#"><i class="fab fa-facebook-f"></i></a></div>
+                <div class="circle__social_media "> <a href="#"><i class="fab fa-pinterest-p"></i></a></div>
+                <div class="circle__social_media "><a href="#"><i class="fab fa-instagram"></i></a></div>
 
 
+            </div>
+            <div class="button">
+                <a href="#" class="rupiah">RUPIAH</a>
             </div>
             </div>
     </nav>
 
     <main>
+        <section>
+            <div class="wrapper__slider">
+                <div  class="slider">
+                    <div class="first_slider">
+                        <img src="img/slider.png" alt="slider">
+                        <div class="slider__sale">
+                            <div class="slider__sale">
+                                <h1 class="sale_season">MID-SEASON</h1>
+                                <span class="sale_sale">SALE</span>
+                                <span class="sale_up">UP TO</span>
+                                <span class="sale_discont">50% OFF</span>
+                            </div>
+                            <a class="slider__button" href="#">SHOP NOW</a>
+                        </div>
+                    </div>
+                    <div class="second_slider" ><img src="img/slider.png" alt="slider"></div>
+                    <div class="third_slider"><img src="img/slider.png" alt="slider"></div>
+                    <div class="fourth_slider"><img src="img/slider.png" alt="slider"></div>
+                </div>
+            </div>
+
+        </section>
         <section>
           <div class="wrapper">
               <div class="section_title">
