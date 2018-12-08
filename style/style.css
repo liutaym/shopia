@@ -3,7 +3,10 @@ body,h1, h2, h3
     margin: 0;
     padding: 0;
 }
-
+h1{
+    font-size: 50px;
+    padding: 20px 0;
+}
 a{
     text-decoration:none;
     color:inherit;
@@ -228,7 +231,7 @@ a.rupiah:active:after {
 }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 950px) {
     .menu {
         flex-direction:column;
 
@@ -240,30 +243,113 @@ a.rupiah:active:after {
     .menu_nav{
         padding: 10px 0 20px 0;
     }
+    .button{
+        margin: 20px 0;
+    }
 }
 
-.wrapper__slider{display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:20px 0 ;
-    background: #eeeeee;
-    max-width: 1290px;
-    margin: 0 auto;
+
+.wrapper__slider {
+    padding: 0 calc(50% - 645px);
+    position: relative;
+    background-color: grey;
+}
+
+.slider{
+
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+.slider__center{
     position: relative;
 }
-.wrapper__slider::after{
-    content:'';
-    display: block;
-    height: 100%;
-    width: 100vw;
-    background-color: inherit;
+
+
+.slider__content {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
     top: 0;
-    z-index: -1;
-    margin: auto;
-    left: -50vw;
-    right: -50vw;
+    left: 13%;
+    right: 0;
+
+
 }
+
+.slider__sale {
+    height: 280px;
+    padding: 10px;
+    border: 4px solid #fff;
+    border-radius: 5px;
+
+}
+
+.sale_sale_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 260px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.sale_sale_wrapper:hover, .slider__sale:hover{
+    outline: 2px solid #000;
+    border-radius: 5px;
+}
+
+
+.sale_season, .sale_up {
+    font-size: 20px;
+    color: #fff;
+}
+.sale_up {
+    padding-bottom: 20px;
+}
+
+.sale_discont {
+    color: #000;
+    font-size: 30px;
+}
+
+
+
+.slider__button {
+    background-color: #f09d66;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 30px;
+    margin-top: 30px;
+
+}
+.slider__button:hover{
+
+    background-color: black;
+}
+
+
+.support {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    max-width: 1290px;
+    margin: 0 auto;
+
+}
+
 
 
 
@@ -402,40 +488,6 @@ a.rupiah:active:after {
 }
 
 
-.section_title {
-    display: block;
-    overflow: hidden;
-    margin: 50px 0 50px 0;
-
-    text-align: center;
-    white-space: nowrap;
-}
-
-.section_title-content {
-    display: inline-block;
-    vertical-align: middle;
-    white-space: normal;
-    line-height: 1.4;
-}
-.section__img{
-    vertical-align: middle;
-    padding: 0 20px;
-}
-
-.section_title_left,
-.section_title_right {
-    display: inline-block;
-
-    vertical-align: middle;
-
-    border-top: 2px solid #eaeaea;
-    width: 999px;
-    margin: 0 0 0 -999px;
-}
-
-.section_title_right {
-    margin: 0 -999px 0 0;
-}
 
 
 
@@ -470,8 +522,8 @@ figure{
 }
 .products__img{
     padding-bottom: 15px;
-    max-width: 301px;
-    min-height:348px;
+    max-width: 100%;
+
 }
 
 
@@ -508,16 +560,111 @@ figure{
     max-width: 1290px;
     min-height: 962px;
     margin: auto;
-    box-sizing: border-box;
-    border: 1px solid black;
+
     display: flex;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 634px) {
     .products {
-        width: 100%
+        width:100%;
+        text-align: center;
+        position: relative;
 
     }
+    .trapezium{
+        width: auto;
+        position: absolute;
+        text-align: center;
+    }
+    .products__img {
+           width: 80%;
 
+       }
+    .circle{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 50px;
+
+    }
+}
+    h3 {
+        /* Чтобы спрятать часть линий, которые
+        ** будут вылазить за пределы блока */
+        overflow: hidden;
+        /* Выравнивание заголовка по центру,
+        ** можно использовать left, right */
+        text-align: center;
+        /* Тут можно добавить другие стили для заголовка */
+        font-size: 30px;
+    }
+    h3 span {
+        /* Стили тега обертки для заголовков
+        ** в несколько строк */
+        display: inline-block;
+        vertical-align: middle;
+    }
+    h3:before,
+    h3:after {
+        /* Обязательно указываем пустое свойство content,
+        ** иначе псевдоэлементы не появятся на сайте */
+        content: "";
+        /* Указываем что наши линии будут строчно-блочные и
+        ** выравнивание по высоте - по центру */
+        display: inline-block;
+        vertical-align: middle;
+        /* Задаем ширину 100% и выбираем высоту линии,
+        ** в нашем примере она равна 4 пикселям */
+        width: 100%;
+        height: 4px;
+        /* Добавляем цвет для линии */
+        background-color: #00cf00;
+        /* Добавляем пседоэлемантам возможность изменить
+        ** позицию линии, для создания отступов от текста */
+        position: relative;
+    }
+    h3:before {
+        /* Смещаем левую линию на 100% влево, чтобы линия
+        ** встала рядом с текстом слева */
+        margin-left: -100%;
+        /* Указываем в пикселях отступ линии от текста заголовка */
+        left: -14px;
+    }
+    h3:after {
+        /* Смещаем правую линию на 100% вправо, чтобы
+        ** линия встала рядом с текстом справа */
+        margin-right: -100%;
+        /* Указываем в пикселях отступ линии от текста заголовка */
+        right: -14px;
+    }
+
+
+
+
+
+.brand {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding:0 10px;
 }
 
+.brand__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 105px  0 120px;
+}
+
+.brand_img {
+    margin: 15px;
+}
+
+@media screen and (max-width: 450px){
+    .brand_img {
+        width: 80%;
+        padding: 20px 0;
+
+    }
+}
