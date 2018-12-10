@@ -258,11 +258,8 @@ a.rupiah:active:after {
 .slider{
 
     padding: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    max-width: 1290px;
+
 
 }
 .slider__center{
@@ -340,19 +337,166 @@ a.rupiah:active:after {
 
 
 .support {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
 
-    max-width: 1290px;
-    margin: 0 auto;
+
+    display: flex;
+    padding: 0 calc(50% - 645px);
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.free, .hour {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+   flex-basis: 380px;
+    min-height: 100px;
+}
+.days{
+    flex-basis: 420px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.free, .hour {
+    background: #d9bf8f;
+
+}
+.days{
+    background: black;
+    padding-left: 20px;
 
 }
 
 
+.free_content, .days_content, .hour_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 
+}
+.days_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.item1{
+    font-size: 30px;
+    color: white;
+    padding-bottom: 10px;
+
+}
+.item2{
+    font-size: 15px;
+    color: white;
+
+}
+
+.free .fas, .fa {
+    padding: 30px 14px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    transform: rotate(-45deg);
+
+}
+.free .fas:hover, .fa:hover {
+    transform: rotate(15deg);
+}
+
+
+.far, .fa{
+
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    transform: rotate(-45deg);
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-right: 20px;
+
+}
+
+.far:hover, .fa:hover {
+    transform: rotate(15deg);
+}
+
+.days:hover {
+    background: #d9bf8f;
+
+    color: white;
+
+}
+
+
+.free::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 50px solid #d9bf8f;
+    border-bottom: 50px solid transparent;
+}
+
+
+.days::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 50px solid white;
+    border-bottom: 50px solid transparent;
+}
+
+.days::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 50px solid white;
+    border-bottom: 50px solid transparent;
+    transform: rotate(180deg);
+}
+
+.hour::after {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 50px solid #d9bf8f;
+    border-bottom: 50px solid transparent;
+    transform: rotate(180deg);
+}
+@media screen and (max-width: 1000px) {
+    .free, .hour, .days {
+        width: 80%;
+    }
+
+    .free::after, .days::before, .days::after, .hour::after {
+        display: none;
+    }
+    .support{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
 .wrapper{
     max-width: 1290px;
     margin: 0 auto;
@@ -589,55 +733,48 @@ figure{
 
     }
 }
-    h3 {
-        /* Чтобы спрятать часть линий, которые
-        ** будут вылазить за пределы блока */
-        overflow: hidden;
-        /* Выравнивание заголовка по центру,
-        ** можно использовать left, right */
-        text-align: center;
-        /* Тут можно добавить другие стили для заголовка */
-        font-size: 30px;
-    }
-    h3 span {
-        /* Стили тега обертки для заголовков
-        ** в несколько строк */
-        display: inline-block;
-        vertical-align: middle;
-    }
-    h3:before,
-    h3:after {
-        /* Обязательно указываем пустое свойство content,
-        ** иначе псевдоэлементы не появятся на сайте */
-        content: "";
-        /* Указываем что наши линии будут строчно-блочные и
-        ** выравнивание по высоте - по центру */
-        display: inline-block;
-        vertical-align: middle;
-        /* Задаем ширину 100% и выбираем высоту линии,
-        ** в нашем примере она равна 4 пикселям */
-        width: 100%;
-        height: 4px;
-        /* Добавляем цвет для линии */
-        background-color: #00cf00;
-        /* Добавляем пседоэлемантам возможность изменить
-        ** позицию линии, для создания отступов от текста */
-        position: relative;
-    }
-    h3:before {
-        /* Смещаем левую линию на 100% влево, чтобы линия
-        ** встала рядом с текстом слева */
-        margin-left: -100%;
-        /* Указываем в пикселях отступ линии от текста заголовка */
-        left: -14px;
-    }
-    h3:after {
-        /* Смещаем правую линию на 100% вправо, чтобы
-        ** линия встала рядом с текстом справа */
-        margin-right: -100%;
-        /* Указываем в пикселях отступ линии от текста заголовка */
-        right: -14px;
-    }
+.section_title {
+    max-width: 1290px;
+    margin: 10px auto;
+
+}
+h2{
+/* Прячем часть линий, выходящие за пределы блока */
+overflow: hidden;
+/* Выравниваем заголовок по центру, можно указать left, right для выравнивания влево или вправо */
+text-align: center;
+/* Размер заголовка */
+font-size: 25px;
+}
+h2:before,
+h2:after {
+    /* Свойство content необходимо указывать хотя бы пустое, иначе псевдоэлементы не отобразятся */
+    content: "";
+    /* Свойства линий, выравнивание по центру по вертикали */
+    display: inline-block;
+    vertical-align: middle;
+    /* Ширина - 100% и указываем толщину линии */
+    width: 100%;
+    height: 2px;
+    /* Цвет линии */
+    background-color: #d9bf8f;
+    /* Возможность для пседоэлементов изменить позицию линии */
+    position: relative;
+}
+h2:before {
+    /* Ставим левую линию слева от текста, смещая ее на 100% влево */
+    margin-left: -100%;
+    background-image: url("../img/koob.png");
+    /* Отступ линии от заголовка */
+    left: -14px;
+}
+h2:after {
+    /* Ставим правую линию справа от текста, смещая ее на 100% вправо */
+    margin-right: -100%;
+    /* Отступ линии от заголовка */
+    right: -14px;
+    background-image: url("../img/koob.png");
+}
 
 
 
