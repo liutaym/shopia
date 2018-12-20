@@ -16,7 +16,32 @@ li{
 }
 html {
     overflow-x: hidden;
+
 }
+h2{
+    font-family: Roboto-Regular;
+    font-style:italic;
+}
+.section_title{
+   padding: 40px 0;
+}
+.section_title h2::after, .section_title h2::before {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    vertical-align: middle;
+    background:  #eaeaea;
+}
+
+.section_title span {
+    display: inline-block;
+    background-image: url(../img/koob.png);
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 30px;
+}
+
 a.rupiah {
     display: inline-block;
     text-decoration: none;
@@ -367,8 +392,8 @@ a.rupiah:active:after {
 .days{
     background: black;
     padding-left: 20px;
-
 }
+
 
 
 .free_content, .days_content, .hour_content{
@@ -486,15 +511,15 @@ a.rupiah:active:after {
 }
 @media screen and (max-width: 1000px) {
     .free, .hour, .days {
-        width: 80%;
+        flex-grow: 1;
     }
 
     .free::after, .days::before, .days::after, .hour::after {
         display: none;
     }
     .support{
-        display: flex;
-        flex-wrap: nowrap;
+       flex-direction: column;
+
     }
 }
 .wrapper{
@@ -620,7 +645,6 @@ a.rupiah:active:after {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #ffffff;
-    padding-top: 30px;
 
 }
 .resent_content {
@@ -746,6 +770,18 @@ text-align: center;
 /* Размер заголовка */
 font-size: 25px;
 }
+
+.d19 {
+    width: 0; height: 0;
+    border: 50px solid transparent;
+    border-bottom-color: #53BA88;
+    position: relative; top: -50px;}
+.d19:after {
+    content: "";
+    width: 0; height: 0;
+    position: absolute; left: -50px; top: 50px;
+    border: 50px solid transparent;
+    border-top-color: #53BA88;}
 h2:before,
 h2:after {
     /* Свойство content необходимо указывать хотя бы пустое, иначе псевдоэлементы не отобразятся */
@@ -758,6 +794,7 @@ h2:after {
     height: 2px;
     /* Цвет линии */
     background-color: #d9bf8f;
+    background: padding-box content-box #eaeaea;
     /* Возможность для пседоэлементов изменить позицию линии */
     position: relative;
 }
@@ -977,54 +1014,175 @@ h3{
 .footer_social_media {
 
 
-    justify-content: space-around;
-    align-items: center;
+    justify-content:flex-start;
+
 }
 
 .footer_social_media .fab, .fa {
     padding: 12px 14px;
     font-size: 20px;
-    color: white;
+    color: black;
 
 }
+.media_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 
 .footer_social_media .fab:hover, .fa:hover{
     color: #d9bf8f;}
 
-.circle__footer_social_media {
-    border : 2px solid white;
-    background: white;
-
-
+.circle_footer_social_media {
+    width: 50px;
+    height: 50px;
+    background-color: white;
     border-radius: 50%;
-    margin: 0 5px;
+    margin-right: auto;
+
+
+
 }
 
 
 .social_media_item{
     display:flex;
+    padding: 0;
 }
 
 .search-form {
     display: flex;
     justify-content: space-around;
+    border: 1px solid #ffffff;
+    padding: 10px 5px;
 }
 .search-form__search-field{
     flex-grow: 1;
-    border-right:none ;
-    padding:5px 1px;
+    margin: 5px;
+    padding:5px;
+    background-color: black;
+    color: #fff;
+    border: none;
 
 }
 .search-form__search-button{
-    padding: 0 10px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items:center;
-    background: #eeeeee;
-    border: thin solid #ededed;
-    border-left:none ;
+    background-color: #323030;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    margin: 5px;
 }
-.search-form__search-button .icon{
-    font-size: 10px;
+
+.card{
+    margin: 20px 0;
 }
+.card .fab, .fa {
+    padding: 12px 14px;
+    font-size: 25px;
+    color: white;
+
+
+}
+.footer_small_card span, .footer_small_card p, small {
+    color: #353535;
+    font-size: 18px;
+}
+.topbutton {
+    width:50px;
+    border:2px solid #ccc;
+    background:#f7f7f7;
+    text-align:center;
+    padding:10px;
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    cursor:pointer;
+    color:#333;
+    font-family:OpenSans-Bold;
+    font-size:12px;
+    z-index: 100;
+    border-radius: 5px;}
+.button_icon{
+    width:1em;
+    height:1em;
+    font-size:15px;
+    color: red;
+
+}
+.customer_toggel_box, .shop_toggel_box, .informaion_toggel_box{
+    display: none;
+}
+
+.menu_toggle_shop, .informaion_toggle, .customer_toggle{
+    display: none;
+    line-height: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    .media_form {
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle_footer_social_media {
+        margin-right: 20px;
+    }
+    .footer_content {
+        justify-content: space-around;
+    }
+    .footer_small_card{
+        margin-left: 20px;
+    }
+
+
+}
+@media screen and (max-width: 750px) {
+
+    .footer_content {
+        flex-direction: column;
+    }
+
+    .menu_toggle_shop, .informaion_toggle, .customer_toggle {
+        display: block;
+        color: white;
+        font-size: 25px;
+    }
+
+    .shop_toggel_box:checked ~ .shops_menu {
+        display: block;
+    }
+
+
+    .shops_menu, .informaion_item, .customer_item {
+        display: none;
+    }
+    .customer_toggel_box:checked ~ .customer_item {
+        display: block;
+    }
+
+
+
+    .informaion_toggel_box:checked ~ .informaion_item {
+        display: block;
+    }
+    .footer_shops, .footer_informaion, .footer_customer{
+        margin-left: 26%;
+    }
+
+  h3{
+      display: none;
+  }
+  .footer_social_media h3{
+      display: block;
+  }
+}
+
+
+
